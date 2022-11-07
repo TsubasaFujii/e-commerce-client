@@ -47,22 +47,26 @@ export default function ProductView() {
         >
             <NavLinkBar path='/products' />
             <Stack direction={{ base: 'column', lg: 'row' }} spacing={6}>
-                <Box>
-                    <Heading fontSize={{ base: '1.5rem', lg: '2rem' }}>
+                <Box maxW={{ base: '100%', lg: '70%' }}>
+                    <Heading
+                        paddingY={5}
+                        fontSize={{ base: '1.5rem', lg: '2rem' }}
+                    >
                         {currentProduct.title}
                     </Heading>
                     <Box
-                        p={{ base: '0', lg: '0.5rem' }}
-                        py={{ base: '1rem', lg: '0' }}
+                        w={{ base: '100%', lg: '30vw' }}
+                        marginX={'auto'}
                     >
                         <Image
                             src={currentProduct.image}
+                            maxW={['100%', '20rem']}
+                            marginX={'auto'}
                             alt='product'
                         />
                     </Box>
                 </Box>
-
-                <VStack maxW={{ base: '100%', lg: 'sm' }} align='start' spacing={3}>
+                <VStack maxW={{ base: '100%', lg: '30%' }} align='start' spacing={3}>
                     <Text fontSize='2xl'>£{
                         new Intl.NumberFormat('en-IN', { minimumFractionDigits: 2 })
                             .format(currentProduct.price)
